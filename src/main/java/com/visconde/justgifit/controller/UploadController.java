@@ -22,6 +22,8 @@ public class UploadController {
 
 	@Value("${spring.http.multipart.location}")
 	private String location;
+	
+	//Curl command --> curl -F file=@c:/cats.mp4 -F start=0 -F end=0 -F speed=1 -F repeat=0 localhost:8081/upload
 
 	@RequestMapping(value = "/upload", method = RequestMethod.POST, produces = MediaType.IMAGE_GIF_VALUE)
 	public String upload(@RequestPart("file") MultipartFile file, @RequestParam("start") int start,
